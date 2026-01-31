@@ -1,0 +1,328 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Font bảng & phân trang – chỉnh tại đây */
+  --table-font-size: 14px;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* PrimeReact DataTable – font bảng & phân trang dùng --table-font-size từ :root */
+.p-datatable .p-datatable-thead > tr > th,
+.p-datatable .p-datatable-tbody > tr > td {
+  font-size: var(--table-font-size);
+}
+
+/* Chỉ header có background, body trắng */
+.p-datatable .p-datatable-tbody > tr {
+  background: transparent;
+}
+.p-datatable.p-datatable-striped .p-datatable-tbody > tr:nth-child(even) {
+  background: transparent;
+}
+
+/* Hàng được chọn: nền kem/vàng nhạt, chữ đen (không xanh) */
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+  background: #faf6eb !important;
+}
+.p-datatable .p-datatable-tbody > tr.p-highlight > td {
+  background: #faf6eb !important;
+  color: #1a1a1a !important;
+}
+/* Chữ trong hàng chọn: màu đen, không xanh */
+.p-datatable .p-datatable-tbody > tr.p-highlight > td,
+.p-datatable .p-datatable-tbody > tr.p-highlight > td a,
+.p-datatable .p-datatable-tbody > tr.p-highlight > td span,
+.p-datatable .p-datatable-tbody > tr.p-highlight > td div,
+.p-datatable .p-datatable-tbody > tr.p-highlight > td .p-cell-data {
+  color: #1a1a1a !important;
+}
+
+/* Radio/checkbox trong bảng: nhỏ gọn, style đẹp */
+.p-datatable .p-radiobutton,
+.p-datatable .p-checkbox {
+  transform: scale(0.85);
+}
+.p-datatable .p-radiobutton .p-radiobutton-box,
+.p-datatable .p-checkbox .p-checkbox-box {
+  width: 1rem;
+  height: 1rem;
+  border-width: 1.5px;
+}
+
+/* Radio chưa chọn: viền xám nhạt, nền trắng */
+.p-datatable .p-radiobutton .p-radiobutton-box {
+  border-color: #d1d5db;
+  background: #ffffff;
+}
+.p-datatable .p-radiobutton .p-radiobutton-box:hover {
+  border-color: #9ca3af;
+}
+
+/* Radio được chọn: vàng nâu (#c8872a) */
+.p-datatable .p-radiobutton.p-highlight .p-radiobutton-box {
+  border-color: #c8872a;
+  background: #c8872a;
+}
+.p-datatable .p-radiobutton.p-highlight .p-radiobutton-box .p-radiobutton-icon {
+  background: #fff;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.p-paginator,
+.p-paginator .p-paginator-current,
+.p-paginator .p-paginator-page,
+.p-paginator .p-paginator-element,
+.p-paginator .p-dropdown,
+.p-paginator .p-dropdown-label {
+  font-size: var(--table-font-size);
+}
+.p-paginator .p-dropdown .p-dropdown-label {
+  font-size: var(--table-font-size);
+}
+
+/* Paginator: bên trái hiển thị "từ X đến Y", bên phải nút phân trang */
+.p-datatable .p-paginator {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.p-datatable .p-paginator > *:first-child {
+  margin-right: auto;
+}
+
+/* Dropdown menu items hover - background màu #be8a4b, text trắng */
+[data-slot="dropdown-menu-item"]:hover,
+[data-slot="dropdown-menu-sub-trigger"]:hover {
+  background-color: #be8a4b !important;
+  color: white !important;
+}
+
+[data-slot="dropdown-menu-item"]:focus,
+[data-slot="dropdown-menu-sub-trigger"]:focus {
+  background-color: #be8a4b !important;
+  color: white !important;
+}
+
+[data-slot="dropdown-menu-sub-trigger"][data-state="open"] {
+  background-color: #be8a4b !important;
+  color: white !important;
+}
+
+/* Nav items cha: mặc định text đen (text-slate-900) */
+nav [data-slot="dropdown-menu-trigger"] {
+  height: 100% !important;
+  min-height: 48px !important;
+  color: rgb(15 23 42) !important; /* text-slate-900 - màu đen mặc định */
+}
+
+/* Nav items cha: khi hover thì background #be8a4b full height, text trắng */
+nav [data-slot="dropdown-menu-trigger"]:hover {
+  background-color: #be8a4b !important;
+  color: white !important;
+}
+
+/* Khi NavLink có class nav-item-open (dropdown đang mở) - LUÔN giữ background, text vẫn đen nếu không hover */
+/* Specificity cao nhất để override mọi CSS khác bao gồm Tailwind và PrimeReact */
+nav a.nav-item-open,
+nav a.nav-item-open:not(:hover):not(:focus):not(:active),
+nav a.nav-item-open.hover\:bg-\[\\#be8a4b\]:not(:hover) {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+  height: 100% !important;
+  min-height: 48px !important;
+  color: rgb(15 23 42) !important; /* text-slate-900 - màu đen mặc định */
+}
+
+/* Override Tailwind hover khi có nav-item-open nhưng không hover */
+nav a.nav-item-open.hover\:bg-\[\\#be8a4b\] {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+}
+
+/* Khi NavLink có class nav-item-open VÀ hover thì text trắng */
+nav a.nav-item-open:hover {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+  color: white !important;
+  height: 100% !important;
+  min-height: 48px !important;
+}
+
+/* Đảm bảo khi dropdown mở (data-state="open") thì trigger LUÔN giữ background, kể cả khi hover vào dropdown content */
+nav [data-slot="dropdown-menu"][data-state="open"] [data-slot="dropdown-menu-trigger"],
+nav [data-slot="dropdown-menu"][data-state="open"] [data-slot="dropdown-menu-trigger"]:not(:hover) {
+  background-color: #be8a4b !important;
+  height: 100% !important;
+  min-height: 48px !important;
+  color: rgb(15 23 42) !important; /* text-slate-900 - màu đen mặc định */
+}
+
+nav [data-slot="dropdown-menu"][data-state="open"] [data-slot="dropdown-menu-trigger"]:hover {
+  background-color: #be8a4b !important;
+  color: white !important;
+}
+
+/* QUAN TRỌNG: Khi dropdown mở (data-state="open"), trigger LUÔN giữ background dù có hover vào content hay không */
+/* Vì DropdownMenuContent render trong Portal nên không thể dùng sibling selector, phải dựa vào data-state */
+nav [data-slot="dropdown-menu"][data-state="open"] [data-slot="dropdown-menu-trigger"],
+nav [data-slot="dropdown-menu"][data-state="open"] [data-slot="dropdown-menu-trigger"]:not(:hover) {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+  height: 100% !important;
+  min-height: 48px !important;
+  color: rgb(15 23 42) !important; /* text-slate-900 - màu đen mặc định */
+}
+
+/* Override tất cả Tailwind classes có thể ghi đè background - specificity cao nhất */
+nav a.nav-item-open.bg-\\[\\#be8a4b\\],
+nav a.nav-item-open.bg-\\[\\#be8a4b\\]:not(:hover),
+nav a.bg-\\[\\#be8a4b\\].nav-item-open {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+  height: 100% !important;
+  min-height: 48px !important;
+}
+
+/* QUAN TRỌNG NHẤT: Đảm bảo khi có class nav-item-open thì LUÔN có background, override cả Tailwind hover */
+/* Specificity cao nhất: nav + a + class + :not(:hover) */
+nav a.nav-item-open:not(:hover),
+nav a.nav-item-open.hover\:bg-\[\\#be8a4b\]:not(:hover) {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+  height: 100% !important;
+  min-height: 48px !important;
+  color: rgb(15 23 42) !important;
+}
+
+/* Override Tailwind hover class khi có nav-item-open */
+nav a.nav-item-open.hover\:bg-\[\\#be8a4b\] {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+}
+
+/* Khi dropdown mở, đảm bảo trigger có background dù không hover */
+nav [data-slot="dropdown-menu"][data-state="open"] a.nav-item-open:not(:hover),
+nav [data-slot="dropdown-menu"][data-state="open"] a.nav-item-open.hover\:bg-\[\\#be8a4b\]:not(:hover) {
+  background-color: #be8a4b !important;
+  background: #be8a4b !important;
+  color: rgb(15 23 42) !important;
+}
